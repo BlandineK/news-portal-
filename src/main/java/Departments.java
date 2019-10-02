@@ -11,4 +11,6 @@ public class Departments {
     public String Description;
     public int Employees;
 
+    public Departments(String name, String description, int employees) {
+    }
 }
