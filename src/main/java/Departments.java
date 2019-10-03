@@ -20,9 +20,9 @@ public class Departments {
         this.Employees = Employees;
         instances.add(this);
     }
-    public String getName(){
-        return this.Name;
-    }
+//    public String getName(){
+//        return this.Name;
+//    }
     public String getDescription(){
         return this.Description;
     }
