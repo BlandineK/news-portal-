@@ -22,30 +22,35 @@ public class News {
 //        this.Id = instances.size();
     }
 
-    public String getHeader(){
+    public String getHeader() {
         return this.Header;
     }
-    public String getContent(){
+
+    public String getContent() {
         return this.Content;
     }
-    public int getDepartment(){
+
+    public int getDepartment() {
         return this.Department;
     }
-    public static ArrayList<News> getAllInstances(){
+
+    public static ArrayList<News> getAllInstances() {
         return instances;
     }
 
-    public int getId(){
+    public int getId() {
         return this.Id;
     }
+
     public static News findById(int id) {
-        return instances.get(id-1);
+        return instances.get(id - 1);
     }
 
-
-
-
-
+//    public News deleteById(int id) {
+//
+//    }
 
 }
+
+
 

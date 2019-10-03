@@ -38,13 +38,19 @@ public class Users {
         return this.department;
     }
     public static ArrayList<Users> getAllInstances(){
+
         return instances;
     }
     public int getId(){
+
         return this.Id;
     }
     public static Users findById(int id) {
         return instances.get(id-1);
     }
+//    public static Users deleteById(int id){
+//
+//    }
+
 
 }

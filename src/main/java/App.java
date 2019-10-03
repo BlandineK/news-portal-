@@ -1,9 +1,12 @@
-import java.util.Map;
-import java.util.HashMap;
+import org.sql2o.Sql2o;
 import spark.ModelAndView;
-import static spark.Spark.*;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
+import java.sql.Connection;
+import java.util.HashMap;
+import java.util.Map;
+import static spark.Spark.*;
+import static spark.Spark.staticFileLocation;
 
 
 
@@ -34,6 +37,7 @@ public class App {
 
             Map<String, Object> model = new HashMap<String, Object>();
 //            model.put("template", "templates/Department-form.hbs");
+            model.put("allDepartments",Departments.getAll());
             return new ModelAndView(model, "Department-form.hbs");
         },new HandlebarsTemplateEngine());
 
@@ -47,6 +51,7 @@ public class App {
 
             Departments newDepartment = new Departments (Name, Description, Employees);
 //            newDepartment.save();
+            Departments.add(newDepartment);
 
             model.put("Name",Name);
             model.put("Description", Description);
@@ -116,7 +121,7 @@ public class App {
             Map<String, Object> model = new HashMap<String, Object>();
 
             int departId = Integer.parseInt(request.params("id"));
-            Departments idToFind = Departments.findById(departId);
+            Departments idToFind = Departments.findById(DepartmentId);
             model.put("id", departId);
             model.put("dataId", idToFind.getId());
             model.put("allDepartments",Departments.getAllDepartmentsNews(departId));
@@ -157,7 +162,7 @@ public class App {
             int id = Integer.parseInt(request.queryParams("id"));
             System.out.println(id);
             Users findUserDetails = Users.findById(id);
-            Users user=Users.findById(Integer.parseInt(request.Params("id")));
+            Users user=Users.findById(Integer.parseInt(request.queryParams("id")));
             model.put("id", findUserDetails);
             model.put("user",user);
             model.put("userDetails", findUserDetails);
@@ -186,9 +191,9 @@ public class App {
         get("/departments/:id/users", (request, response) -> {
             Map<String, Object> user = new HashMap<>();
             int departmentId = Integer.parseInt(request.queryParams("id"));
-            Departments idToFind = Departments.findById(departId);
+            Departments idToFind = Departments.findById(departmentId);
             user.put("depUsers", Departments.getAllUsers(departmentId));
-            user.put("departmentId", departId);
+            user.put("departmentId", departmentId);
             user.put("departmentId", idToFind.getId());
             user.put("allUsers", Users.getAll());
             return new ModelAndView(user, "department-users.hbs");
@@ -214,7 +219,6 @@ public class App {
             model.put("departmentId", idToFind);
             return new ModelAndView(model, "news-details.hbs");
         },new HandlebarsTemplateEngine());
-
 
 
     }

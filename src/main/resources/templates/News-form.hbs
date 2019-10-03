@@ -1,0 +1,14 @@
+{{#partial "content"}}
+    <section class="landing-pg">
+        <div class="land-left"></div>
+        <div class="land-right"></div>
+        <form class="form" action="/new/News" method="post">
+            <h1>Create Your Department</h1>
+            <input type="text" placeholder="Enter Department Header" name="name" required><br><br>
+            <input type="text" placeholder="Enter Department Content" name="Content" required><br><br>
+            <input type="text" placeholder="Enter Department id" name="id" required><br><br>
+            <input class="btns" type="submit">
+        </form>
+    </section>
+{{/partial}}
+{{> layout.hbs}}
