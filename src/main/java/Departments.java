@@ -23,9 +23,9 @@ public class Departments {
     public String getName(){
         return this.Name;
     }
-//    public String getDescription(){
-//        return this.Description;
-//    }
+    public String getDescription(){
+        return this.Description;
+    }
     public int getEmployees(){
         return this.Employees;
     }
