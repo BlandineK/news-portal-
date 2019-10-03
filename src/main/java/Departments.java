@@ -15,10 +15,10 @@ public class Departments {
 
     private static ArrayList<Departments> instances = new ArrayList<>();
     public Departments(String Name, String Description, int Employees) {
-        this.Name = Name;
-        this.Description = Description;
-        this.Employees = Employees;
-        instances.add(this);
+//        this.Name = Name;
+//        this.Description = Description;
+//        this.Employees = Employees;
+//        instances.add(this);
     }
     public String getName(){
         return this.Name;
