@@ -3,7 +3,7 @@ import java.util.HashMap;
 import spark.ModelAndView;
 import static spark.Spark.*;
 import spark.template.handlebars.HandlebarsTemplateEngine;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 
 public class Users {
 
