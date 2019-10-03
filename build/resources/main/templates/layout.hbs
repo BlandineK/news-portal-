@@ -1,0 +1,32 @@
+{{#block "Header"}}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>{{#block "title"}}News Portal{{/block}}</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/styles.css">
+
+    </head>
+{{/block}}
+<body>
+<div class="container-fluid">
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="/Departments/new">Departments</a></li>
+        <li role="presentation"><a href="/User/new">Users</a></li>
+    </ul>
+    <!--begin main template-->
+    {{#block "content"}}
+    {{/block}}
+
+</div>
+<!--end main template-->
+{{#block "footer"}}
+    </div>
+    </body>
+    </html>
+{{/block}}

@@ -1,0 +1,15 @@
+{{#partial "content"}}
+    <section class="landing-pg">
+        <div class="land-left"></div>
+        <div class="land-right"></div>
+        <form class="form" action="/new/User" method="post">
+            <h1>User Info</h1>
+            <input type="text" placeholder="Enter the departments' name" name="department" required><br><br>
+            <input type="text" placeholder="Enter your news" name="news" required><br><br>
+            <input type="text" placeholder="Enter the username" name="username" required><br><br>
+
+            <input class="btns" type="submit">
+        </form>
+    </section>
+{{/partial}}
+{{> layout.hbs}}
