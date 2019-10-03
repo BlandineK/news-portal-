@@ -25,9 +25,9 @@ public class Departments {
     public String getDescription(){
         return this.Description;
     }
-//    public int getEmployees(){
-//        return this.Employees;
-//    }
+    public int getEmployees(){
+        return this.Employees;
+    }
     public static ArrayList<Departments> getAllInstances(){
         return instances;
     }
