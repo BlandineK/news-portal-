@@ -8,6 +8,7 @@ import spark.template.handlebars.HandlebarsTemplateEngine;
 
 public class Departments {
 
+    private static Object all;
     public String Name;
     public String Description;
     public int Employees;
@@ -20,6 +21,15 @@ public class Departments {
         this.Employees = Employees;
         instances.add(this);
     }
+
+    public static Object getAll() {
+       return newDepartments();
+    }
+
+    private static Object newDepartments() {
+        return all;
+    }
+
     public String getName(){
         return this.Name;
     }
@@ -35,6 +45,10 @@ public class Departments {
 
     public int getId(){
         return this.Id;
+    }
+
+    public static Departments findById(int id) {
+        return instances.get(id-1);
     }
 
 }

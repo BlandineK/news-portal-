@@ -25,6 +25,10 @@ public class Users {
 //        this.Id = instances.size();
 
     }
+    public static Object getAll() {
+        return newUsers();
+    }
+
     public String getName(){
         return this.name;
     }
@@ -48,9 +52,10 @@ public class Users {
     public static Users findById(int id) {
         return instances.get(id-1);
     }
-//    public static Users deleteById(int id){
-//
-//    }
+    public static Users deleteById(int id){
+        return instances.get(id-1);
+    }
+
 
 
 }

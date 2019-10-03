@@ -51,7 +51,7 @@ public class App {
 
             Departments newDepartment = new Departments (Name, Description, Employees);
 //            newDepartment.save();
-            Departments.add(newDepartment);
+//            Departments.add(newDepartment);
 
             model.put("Name",Name);
             model.put("Description", Description);
@@ -166,7 +166,7 @@ public class App {
             model.put("id", findUserDetails);
             model.put("user",user);
             model.put("userDetails", findUserDetails);
-            new ModelAndView(model, "user-details.hbs");
+            return new ModelAndView(model, "user-details.hbs");
         },new HandlebarsTemplateEngine());
 
         get("/users/:id/edit", (request, response) -> {
